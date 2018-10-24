@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>visibility</title>
+</head>
+<body>
+	<script>
+	document.addEventListener('visibilitychange',function(){ //浏览器切换事件
+	    if(document.visibilityState=='hidden') { //状态判断
+	        //normal_title=document.title;
+	        console.log(1212)
+	        document.title = '标题二'; 
+	    }else {
+	    	console.log(3232)
+	        document.title = '标题一';
+	    }
+	});
+	navigator.share({
+	    title: document.title,
+	    url: document.querySelector('link[rel=canonical]') ?
+	        document.querySelector('link[rel=canonical]').href :
+	        window.location.href
+	})
+
+
+
+	</script>
+	
+</body>
+</html>
